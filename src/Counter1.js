@@ -1,23 +1,25 @@
-import React from 'react'
+import {useState} from 'react'
 
 function Counter1() {
+    const [count,setCount] = useState(9);
+    const handleAdd=()=>{
+        setCount(count+1);
+        console.log(count);
+    }
 
-    const handleAdd=()=>{
-        console.log("+ clicked");
-    }
+    const handleSub=()=>{
+        setCount(count-1);
+        console.log(count);
+    }
 
-    const handleSub=()=>{
-        console.log("- clicked");
-    }
-
-  return (
-    <div>
-    <h2>Counter</h2>
-    <h3>0</h3>
-    <button onClick={handleSub} style={{padding:8,backgroundColor:"#045590",margin:4,color:"white"}}>-</button>
-    <button onClick={handleAdd} style={{padding:8,backgroundColor:"#045590",margin:4,color:"white"}}>+</button>
-    </div>
-  )
+  return (
+    <div>
+    <h2>Counter</h2>
+    <h3>{count}</h3>
+    <button onClick={handleSub} style={{padding:8,backgroundColor:"#045590",margin:4,color:"white"}}>-</button>
+    <button onClick={handleAdd} style={{padding:8,backgroundColor:"#045590",margin:4,color:"white"}}>+</button>
+    </div>
+  )
 }
 
 export default Counter1;
